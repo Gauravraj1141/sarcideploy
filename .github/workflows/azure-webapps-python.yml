@@ -20,7 +20,7 @@
 name: Build and deploy Python app to Azure Web App
 
 env:
-  AZURE_WEBAPP_NAME: your-app-name  # set this to the name of your Azure Web App
+  AZURE_WEBAPP_NAME: main.py  # set this to the name of your Azure Web App
   PYTHON_VERSION: '3.8'              # set this to the Python version to use
 
 on:
@@ -72,6 +72,13 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CLIENT_ID }}
+          password: ${{ secrets.AZURE_CLIENT_SECRET }}
+          tenant: ${{ secrets.AZURE_TENANT_ID }}
+
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
