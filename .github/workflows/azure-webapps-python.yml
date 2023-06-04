@@ -79,9 +79,10 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.CLIENT_ID }}
+          client-id: ${{ secrets.CLIENT_ID }}
           password: ${{ secrets.CLIENT_SECRET }}
-          tenant: ${{ secrets.TENANT_ID }}
+          subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
+          tenant-id: ${{ secrets.TENANT_ID }}
 
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
