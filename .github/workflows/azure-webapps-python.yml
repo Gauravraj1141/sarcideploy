@@ -72,6 +72,10 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
+      - name: Check Azure CLI installation
+        run: |
+          az --version
+
       - name: Azure Login
         uses: azure/login@v1
         with:
