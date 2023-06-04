@@ -1,4 +1,4 @@
-def hellow_world():
-    return "Hellow World"
+def hello_world():
+    return "Hello World"
 
-hellow_world()
+hello_world()
