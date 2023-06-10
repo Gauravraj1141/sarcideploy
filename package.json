@@ -1,0 +1,20 @@
+{
+  "name": "sarcideploy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node appconfig/invoicemanagement/invoicemanagementapp/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gauravraj1141/sarcideploy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gauravraj1141/sarcideploy/issues"
+  },
+  "homepage": "https://github.com/Gauravraj1141/sarcideploy#readme"
+}
