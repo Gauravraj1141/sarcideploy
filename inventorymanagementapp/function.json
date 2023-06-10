@@ -1,0 +1,21 @@
+{
+  "scriptFile": "main.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "route": "sarcideploy/inventorymanagementapp/main.py",
+      "methods": [
+        "post",
+        "get"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
