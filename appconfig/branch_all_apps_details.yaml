@@ -1,0 +1,4 @@
+branch_details:	
+	branch_name: Bangalore
+	apps_list: [Inventory_Management, Invoice_Management, Customer_Onboarding]
+	org_name: tcs
