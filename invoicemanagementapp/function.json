@@ -1,15 +1,14 @@
 {
-  "scriptFile": "main.py",
+  "scriptFile": "index.js",
   "bindings": [
     {
       "authLevel": "anonymous",
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "route": "sarcideploy/inventorymanagementapp",
+      "route": "sarciappdeployment/invoicemanagementapp",
       "methods": [
-        "post",
-        "get"
+        "post"
       ]
     },
     {

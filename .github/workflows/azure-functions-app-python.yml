@@ -20,11 +20,12 @@ name: Deploy Python project to Azure Function App
 
 on:
   push:
-    branches: ["main"]
+    paths:
+      - 'inventorymanagementapp**'
 
 env:
-  AZURE_FUNCTIONAPP_NAME: 'helloworldsarci'   # set this to your function app name on Azure
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '.'       # set this to the path to your function app project, defaults to the repository root
+  AZURE_FUNCTIONAPP_NAME: 'pythonfuncdeploy'   # set this to your function app name on Azure
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: 'inventorymanagementapp'       # set this to the path to your function app project, defaults to the repository root
   PYTHON_VERSION: '3.8'                     # set this to the python version to use (e.g. '3.6', '3.7', '3.8')
 
 jobs:
@@ -61,6 +62,6 @@ jobs:
       with:
         app-name: ${{ env.AZURE_FUNCTIONAPP_NAME }}
         package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-        publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }} # Remove publish-profile to use Azure RBAC
+        publish-profile: ${{ secrets.AZURE_PYTHON_PUBLISH_PROFILE }} # Remove publish-profile to use Azure RBAC
         scm-do-build-during-deployment: true
         enable-oryx-build: true
